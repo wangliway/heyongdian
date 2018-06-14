@@ -36,28 +36,51 @@ export const constantRouterMap = [
       component: () => import('@/views/dashboard/index')
     }]
   },
-
   {
-    path: '/example',
+    path: '/home',
     component: Layout,
-    redirect: '/example/table',
-    name: 'Example',
-    meta: { title: 'Example', icon: 'example' },
     children: [
       {
-        path: 'table',
-        name: 'Table',
-        component: () => import('@/views/table/index'),
-        meta: { title: 'Table', icon: 'table' }
-      },
-      {
-        path: 'tree',
-        name: 'Tree',
-        component: () => import('@/views/tree/index'),
-        meta: { title: 'Tree', icon: 'tree' }
+        path: 'index',
+        name: '首页',
+        component: () => import('@/views/home/index'),
+        meta: { title: '首页', icon: 'home' }
       }
     ]
   },
+  {
+    path: '/statics',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: '用电统计',
+        component: () => import('@/views/statistics/index'),
+        meta: { title: '用电统计', icon: 'statics' }
+      }
+    ]
+  },
+  // {
+  //   path: '/home',
+  //   component: Layout,
+  //   redirect: '/example/table',
+  //   name: 'Example',
+  //   meta: { title: 'Example', icon: 'example' },
+  //   children: [
+  //     {
+  //       path: 'table',
+  //       name: 'Table',
+  //       component: () => import('@/views/table/index'),
+  //       meta: { title: 'Table', icon: 'table' }
+  //     },
+  //     {
+  //       path: 'tree',
+  //       name: 'Tree',
+  //       component: () => import('@/views/tree/index'),
+  //       meta: { title: 'Tree', icon: 'tree' }
+  //     }
+  //   ]
+  // },
 
   {
     path: '/form',
@@ -71,6 +94,7 @@ export const constantRouterMap = [
       }
     ]
   },
+
 
   { path: '*', redirect: '/404', hidden: true }
 ]
